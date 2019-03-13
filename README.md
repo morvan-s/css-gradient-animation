@@ -31,3 +31,4 @@ h1{
 An that's all, you should have a syncronised animated colour all over your elements.
 
 ## Example below :
+![](http://www..gif)

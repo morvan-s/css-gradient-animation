@@ -19,10 +19,12 @@ color2 = tools.hexToRgb(color2);
 if(color1 !== null && color2 !== null){
   let precision = 1;
   let cssAnimationEvolution = '';
-  for (var i = 0; i <= 100; i += precision) {
+  for (var i = 0; i < 50; i += precision)
     cssAnimationEvolution += '  ' + i + '%{--gradientColor:'
         + tools.colorGradient(color1,color2,i/100) + ';}\n';
-  }
+  for (var i = 50; i <= 100; i += precision)
+    cssAnimationEvolution += '  ' + i + '%{--gradientColor:'
+        + tools.colorGradient(color2,color1,i/100) + ';}\n';
 
   let compatibilityKeyframes = ['@-webkit-keyframes GradientColor {',
     '@-moz-keyframes GradientColor {',
