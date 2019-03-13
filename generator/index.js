@@ -15,16 +15,25 @@ b = tools.hexToRgb(b);
 
 
 if(a !== null && b !== null){
-  let data = 'New File Contents';
   let precision = 1;
-  let cssContent = '';
   let cssAnimationEvolution = '';
-
   for (var i = 0; i <= 100; i += precision) {
-    tools.colorGradient(a,b,i/100);
+    let percent = i/100;
+    cssAnimationEvolution += '  ' + percent + '%{--gradientColor:'
+        + tools.colorGradient(a,b,percent) + ';}\n';
   }
 
-  fs.writeFile(file, data, function(err, data) {
+  compatibilityKeyframes = ['@-webkit-keyframes GradientColor {',
+    '@-moz-keyframes GradientColor {',
+    '@-o-keyframes GradientColor {',
+    '@keyframes GradientColor {'];
+
+  let cssContent = compatibilityKeyframes.reduce((acc, current, id) => {
+    if(id == 0) acc = '';
+    acc += '\n' + cssAnimationEvolution + '}\n';
+  });
+
+  fs.writeFile(file, cssContent, function(err, data) {
     if (err) console.log(err);
     console.log('Success : Gradient animation file written. ',file);
   });
