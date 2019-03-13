@@ -1,3 +1,8 @@
+/*-----------------------------------------------------------------------------
+-- Css-gradient-animation project
+-- Git : https://github.com/morvan-s/css-gradient-animation/tree/master
+-- Author : Stiven Morvan
+------------------------------------------------------------------------------*/
 @-webkit-keyframes GradientColor {
   0%{--gradientColor:rgb(250,54,54);}
   1%{--gradientColor:rgb(248,54,56);}
