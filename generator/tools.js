@@ -1,10 +1,9 @@
 module.exports = {
   colorGradient : function (color1, color2, percentage) {
-      var percentage2 = 1 - p1;
-      var rgb = [Math.round(color1.r * p1 + color2.r * percentage2),
-          Math.round(color1.g * p1 + color2.g * percentage2),
-          Math.round(color1.b * p1 + color2.b * percentage2)];
-      return rgb;
+      var percentage2 = 1 - percentage;
+      return `rgb(${Math.round(color1.r * p1 + color2.r * percentage2)},
+          ${Math.round(color1.g * p1 + color2.g * percentage2)},
+          ${Math.round(color1.b * p1 + color2.b * percentage2)})`;
   },
   // See this stackoverflow comment : https://stackoverflow.com/a/5624139/9672414
   hexToRgb : function (hex) {

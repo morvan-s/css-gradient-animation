@@ -3,8 +3,8 @@
 // https://github.com/morvan-s/css-gradient-animation/tree/master
 // ----------------------------------------------------------------------------------------------------
 use strict;
-var fs = require('fs');
-var tools = require('./tools');
+let fs = require('fs');
+let tools = require('./tools');
 
 let a = '#164264';
 let b = '#164264';
@@ -15,8 +15,14 @@ b = tools.hexToRgb(b);
 
 
 if(a !== null && b !== null){
-  var data = 'New File Contents';
+  let data = 'New File Contents';
+  let precision = 1;
+  let cssContent = '';
+  let cssAnimationEvolution = '';
 
+  for (var i = 0; i <= 100; i += precision) {
+    tools.colorGradient(a,b,i/100);
+  }
 
   fs.writeFile(file, data, function(err, data) {
     if (err) console.log(err);
