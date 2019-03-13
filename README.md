@@ -31,4 +31,4 @@ h1{
 An that's all, you should have a syncronised animated colour all over your elements.
 
 ## Example below :
-![](http://www..gif)
+![](https://github.com/morvan-s/css-gradient-animation/tree/master/gradient_red_blue.gif)

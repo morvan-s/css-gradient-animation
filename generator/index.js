@@ -21,10 +21,10 @@ if(color1 !== null && color2 !== null){
   let cssAnimationEvolution = '';
   for (var i = 0; i < 50; i += precision)
     cssAnimationEvolution += '  ' + i + '%{--gradientColor:'
-        + tools.colorGradient(color1,color2,i/100) + ';}\n';
+        + tools.colorGradient(color1,color2,i*2/100) + ';}\n';
   for (var i = 50; i <= 100; i += precision)
     cssAnimationEvolution += '  ' + i + '%{--gradientColor:'
-        + tools.colorGradient(color2,color1,i/100) + ';}\n';
+        + tools.colorGradient(color2,color1,(i-50)*2/100) + ';}\n';
 
   let compatibilityKeyframes = ['@-webkit-keyframes GradientColor {',
     '@-moz-keyframes GradientColor {',
