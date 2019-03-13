@@ -1,0 +1,21 @@
+{
+  "name": "generator-css-gradient-animation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/morvan-s/css-gradient-animation/tree/master"
+  },
+  "keywords": [
+    "gradient",
+    "css",
+    "animation",
+    "keyframe"
+  ],
+  "author": "stiven morvan",
+  "license": "ISC"
+}
