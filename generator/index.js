@@ -1,8 +1,12 @@
-// ----------------------------------------------------------------------------------------------------
+let credits = `
+// -----------------------------------------------------------------------------
 // Generator for the css-gradient-animation project
-// https://github.com/morvan-s/css-gradient-animation/tree/master
-// ----------------------------------------------------------------------------------------------------
-use strict;
+// Git : https://github.com/morvan-s/css-gradient-animation/tree/master
+// Author : Stiven Morvan
+// -----------------------------------------------------------------------------
+`;
+
+"use strict";
 let fs = require('fs');
 let tools = require('./tools');
 
