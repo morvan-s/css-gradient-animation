@@ -10,9 +10,9 @@ let credits = `
 let fs = require('fs');
 let tools = require('./tools');
 
-let a = '#164264';
-let b = '#164264';
-let file = `gradient_${a}_${b}.css`;
+let a = '#3f5efb';
+let b = '#fa3636';
+let file = `generated_gradient/gradient_${a}_${b}.css`;
 
 a = tools.hexToRgb(a);
 b = tools.hexToRgb(b);
@@ -22,19 +22,19 @@ if(a !== null && b !== null){
   let precision = 1;
   let cssAnimationEvolution = '';
   for (var i = 0; i <= 100; i += precision) {
-    let percent = i/100;
-    cssAnimationEvolution += '  ' + percent + '%{--gradientColor:'
-        + tools.colorGradient(a,b,percent) + ';}\n';
+    cssAnimationEvolution += '  ' + i + '%{--gradientColor:'
+        + tools.colorGradient(a,b,i/100) + ';}\n';
   }
 
-  compatibilityKeyframes = ['@-webkit-keyframes GradientColor {',
+  let compatibilityKeyframes = ['@-webkit-keyframes GradientColor {',
     '@-moz-keyframes GradientColor {',
     '@-o-keyframes GradientColor {',
     '@keyframes GradientColor {'];
 
   let cssContent = compatibilityKeyframes.reduce((acc, current, id) => {
-    if(id == 0) acc = '';
-    acc += '\n' + cssAnimationEvolution + '}\n';
+    if(id === 1) acc += '\n' + cssAnimationEvolution + '}\n';
+    acc += '\n' + current + '\n' + cssAnimationEvolution + '}\n';
+    return acc;
   });
 
   fs.writeFile(file, cssContent, function(err, data) {
